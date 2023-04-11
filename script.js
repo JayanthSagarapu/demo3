@@ -112,13 +112,15 @@ function addItem(e){
 
   // Get input value
   var newItem = document.getElementById('item').value;
+  var newdesc = document.getElementById('description').value;
 
   // Create new li element
   var li = document.createElement('li');
   // Add class
   li.className = 'list-group-item';
   // Add text node with input value
-  li.appendChild(document.createTextNode(newItem));
+  li.append(document.createTextNode(newItem)," ", document.createTextNode(newdesc));
+  //li.appendChild(document.createTextNode(newdesc));
 
   // Create del button element
   var deleteBtn = document.createElement('button');
@@ -170,7 +172,7 @@ function filterItems(e){
   var items = itemList.getElementsByTagName('li');
   // Convert to an array
   Array.from(items).forEach(function(item){
-    var itemName = item.firstChild.textContent;
+    var itemName = item.textContent;
     if(itemName.toLowerCase().indexOf(text) != -1){
       item.style.display = 'block';
     } else {
