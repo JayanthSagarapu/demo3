@@ -2,6 +2,7 @@ const headerTitle = document.getElementById('header-title');
 const header = document.getElementById('main-header');
 const additems = document.querySelector('.title');
 const items = document.getElementsByClassName('list-group-item');
+const list = document.getElementsByTagName('li');
 
 headerTitle.textContent= 'Jay';
 headerTitle.style.color = 'black';
@@ -15,4 +16,8 @@ items[2].style.background = 'green';
 
 for (let i=0; i< items.length; i++){
     items[i].style.fontWeight = 'bold';
+}
+
+for (let i=0; i< list.length; i++){
+    list[i].style.background = 'grey';
 }
