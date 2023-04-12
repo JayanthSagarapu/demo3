@@ -148,6 +148,20 @@ function addItem(e){
 
   // Append li to list
   itemList.appendChild(li);
+
+
+  //storing in local storage
+  myobj= {
+    item : document.querySelector('#item').value,
+    description : newdesc,
+  }
+  
+  //STRINGIFY
+  myobj_stringfy = JSON.stringify(myobj)
+  localStorage.setItem('myobj1',myobj_stringfy)
+
+  //or
+  localStorage.setItem('myobj',JSON.stringify({item:newItem,description:newdesc}))
 }
 
 // Remove item
@@ -180,3 +194,4 @@ function filterItems(e){
     }
   });
 }
+
